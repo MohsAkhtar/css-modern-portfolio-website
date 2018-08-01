@@ -9,6 +9,11 @@ $background-opacity: 0.9;
 }
 
 @mixin background {
+  @if $show-home-image {
+    &#bg-img {
+      background: $home-image;
+    }
+  }
 }
 
 * {
