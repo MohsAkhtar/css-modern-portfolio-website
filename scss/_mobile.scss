@@ -21,7 +21,8 @@
 
   ul.menu-nav,
   div.menu-branding {
-    // Make them columned downward
+    // Make the branding and navbar single
+    // columned downward for medium and small screens
     float: none;
     width: 100%;
     min-height: 0;
@@ -33,6 +34,7 @@
 
   .menu-nav {
     height: 75vh;
+    // slide in from left
     transform: translate3d(-100%, 0, 0);
     font-size: 24px;
   }
@@ -40,6 +42,7 @@
   .menu-branding {
     // branding only takes 25% of screen
     height: 25vh;
+    // slide in from right
     transform: translate3d(100%, 0, 0);
 
     // change portrait to smaller version of image
@@ -54,6 +57,7 @@
 // Smarthpones
 @include mediaSm {
   main#home h1 {
+    // lower h1 by 10vh
     margin-top: 10vh;
   }
 }
