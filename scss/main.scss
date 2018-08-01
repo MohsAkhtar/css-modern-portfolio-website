@@ -1,6 +1,5 @@
 @import "config";
 @import "menu";
-@import "mobile";
 
 * {
   box-sizing: border-box;
@@ -51,7 +50,9 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  //height: 100%;
+  // takes up whole screen minus footer
+  min-height: calc(100vh - 60px);
 
   .icons {
     margin-top: 1rem;
@@ -74,14 +75,20 @@ main {
   }
 }
 
+// Using grid layout for about me page
 .about-info {
   display: grid;
   grid-gap: 30px;
+  // This is the template of how the items will
+  // appear in the grid
   grid-template-areas:
     "bioimage bio bio"
     "job1 job2 job3";
+  // sets the width of the columns, repeat allows
+  // for 3 * 1fr columns
   grid-template-columns: repeat(3, 1fr);
 
+  // rounds image and gives it a border
   .bio-image {
     grid-area: bioimage;
     margin: auto;
@@ -106,6 +113,7 @@ main {
     grid-area: job3;
   }
 
+  // gives the jobs a nice background with padding
   .job {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
@@ -113,6 +121,7 @@ main {
   }
 }
 
+// css for copyright
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -120,3 +129,6 @@ main {
   color: set-text-color($primary-color);
   height: 60px;
 }
+
+// Want this at bottom so it runs after initial css
+@import "mobile";
