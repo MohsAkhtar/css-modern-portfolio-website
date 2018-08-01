@@ -1,9 +1,17 @@
 // Widescreens
 @include mediaXl {
+  // changes work projects to have four across a row
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 // Desktops and Laptops
 @include mediaLg {
+  // changes work projects to have three across a row
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 // Tablets and small laptops
@@ -64,6 +72,11 @@
 
     grid-template-columns: 1fr;
   }
+
+  // changes work projects to have two across a row
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 // Smarthpones
@@ -71,5 +84,10 @@
   main#home h1 {
     // lower h1 by 10vh
     margin-top: 10vh;
+  }
+
+  // changes work projects to have one col across a row
+  .projects {
+    grid-template-columns: 1fr;
   }
 }
